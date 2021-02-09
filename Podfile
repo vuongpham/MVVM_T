@@ -6,10 +6,13 @@ target 'MVVMAgain' do
   use_frameworks!
 
   # Pods for MVVMAgain
-    pod 'Alamofire', '~> 4.7'
-    pod 'SDWebImage', '~> 4.0'
-	pod 'AlamofireObjectMapper', '~> 5.2'
-    pod 'RealmSwift'
+
+    pod 'Alamofire', '4.9.1'
+    pod 'SDWebImage', '4.4.8'
+    pod 'AlamofireObjectMapper', '5.2.1'
+    pod 'RealmSwift', '10.5.1'
+    pod 'RxCocoa', '5.0.0'
+
   target 'MVVMAgainTests' do
     inherit! :search_paths
     # Pods for testing

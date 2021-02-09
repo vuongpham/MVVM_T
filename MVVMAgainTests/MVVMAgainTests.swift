@@ -27,14 +27,16 @@ class MVVMAgainTests: XCTestCase {
         
         let viewModel = UserViewModel(dataService: DataService())
         viewModel.fetchUsers {}
+
+        let testAPIExpectation = XCTestExpectation(description: "testAPI")
         
         Alamofire.request(usersURL).responseArray { (response: DataResponse<[User]>) in
             numberUserFromAPI = response.result.value?.count ?? -1
-        }
-        
-        // I think delay is not good :D
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
+
             XCTAssertEqual(viewModel.numberOfUsers(), numberUserFromAPI)
+            testAPIExpectation.fulfill()
         }
+
+        wait(for: [testAPIExpectation], timeout: 5.0)
     }
 }

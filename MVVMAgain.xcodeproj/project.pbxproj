@@ -3,13 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		226DE3B58B3DED9D8CCD5A02 /* Pods_MVVMAgainTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 689EF849DA27E38FF02B4E96 /* Pods_MVVMAgainTests.framework */; };
 		498048B322B39E18003E88BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498048B222B39E18003E88BB /* AppDelegate.swift */; };
-		498048B522B39E18003E88BB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498048B422B39E18003E88BB /* ViewController.swift */; };
+		498048B522B39E18003E88BB /* UserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498048B422B39E18003E88BB /* UserListViewController.swift */; };
 		498048B822B39E18003E88BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 498048B622B39E18003E88BB /* Main.storyboard */; };
 		498048BA22B39E19003E88BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 498048B922B39E19003E88BB /* Assets.xcassets */; };
 		498048BD22B39E19003E88BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 498048BB22B39E19003E88BB /* LaunchScreen.storyboard */; };
@@ -37,7 +37,7 @@
 		379A3AE3CA0E48F455333F62 /* Pods-MVVMAgain.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVMAgain.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MVVMAgain/Pods-MVVMAgain.debug.xcconfig"; sourceTree = "<group>"; };
 		498048AF22B39E18003E88BB /* MVVMAgain.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVVMAgain.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		498048B222B39E18003E88BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		498048B422B39E18003E88BB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		498048B422B39E18003E88BB /* UserListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewController.swift; sourceTree = "<group>"; };
 		498048B722B39E18003E88BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		498048B922B39E19003E88BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		498048BC22B39E19003E88BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -106,12 +106,11 @@
 		498048B122B39E18003E88BB /* MVVMAgain */ = {
 			isa = PBXGroup;
 			children = (
-				498048D622B39EEC003E88BB /* Network */,
-				498048D522B39EE2003E88BB /* Model */,
-				498048D322B39EBD003E88BB /* ViewModel */,
-				498048D222B39E5F003E88BB /* View */,
-				498048B222B39E18003E88BB /* AppDelegate.swift */,
-				498048BE22B39E19003E88BB /* Info.plist */,
+				49ABB71825D2958100A16D49 /* Platforms */,
+				49ABB70D25D2941500A16D49 /* Domain */,
+				49ABB70E25D2942600A16D49 /* Features */,
+				49ABB71025D2944200A16D49 /* Resources */,
+				49ABB70F25D2942D00A16D49 /* Common */,
 			);
 			path = MVVMAgain;
 			sourceTree = "<group>";
@@ -123,25 +122,6 @@
 				498048C922B39E1A003E88BB /* Info.plist */,
 			);
 			path = MVVMAgainTests;
-			sourceTree = "<group>";
-		};
-		498048D222B39E5F003E88BB /* View */ = {
-			isa = PBXGroup;
-			children = (
-				498048D822B39F05003E88BB /* ViewCell */,
-				498048D722B39EFD003E88BB /* Controller */,
-				498048D922B39F69003E88BB /* Storyboard */,
-				498048B922B39E19003E88BB /* Assets.xcassets */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		498048D322B39EBD003E88BB /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				498048E222B3B35A003E88BB /* UserViewModel.swift */,
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		498048D522B39EE2003E88BB /* Model */ = {
@@ -160,14 +140,6 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
-		498048D722B39EFD003E88BB /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				498048B422B39E18003E88BB /* ViewController.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
 		498048D822B39F05003E88BB /* ViewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -183,6 +155,58 @@
 				498048BB22B39E19003E88BB /* LaunchScreen.storyboard */,
 			);
 			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		49ABB70D25D2941500A16D49 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				498048D522B39EE2003E88BB /* Model */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		49ABB70E25D2942600A16D49 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				49ABB71525D2951600A16D49 /* UserList */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		49ABB70F25D2942D00A16D49 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		49ABB71025D2944200A16D49 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				498048D922B39F69003E88BB /* Storyboard */,
+				498048B922B39E19003E88BB /* Assets.xcassets */,
+				498048B222B39E18003E88BB /* AppDelegate.swift */,
+				498048BE22B39E19003E88BB /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		49ABB71525D2951600A16D49 /* UserList */ = {
+			isa = PBXGroup;
+			children = (
+				498048D822B39F05003E88BB /* ViewCell */,
+				498048B422B39E18003E88BB /* UserListViewController.swift */,
+				498048E222B3B35A003E88BB /* UserViewModel.swift */,
+			);
+			path = UserList;
+			sourceTree = "<group>";
+		};
+		49ABB71825D2958100A16D49 /* Platforms */ = {
+			isa = PBXGroup;
+			children = (
+				498048D622B39EEC003E88BB /* Network */,
+			);
+			path = Platforms;
 			sourceTree = "<group>";
 		};
 		6490DAE2D42398968A63E605 /* Pods */ = {
@@ -301,27 +325,16 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-MVVMAgain/Pods-MVVMAgain-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
-				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
-				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
-				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MVVMAgain/Pods-MVVMAgain-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MVVMAgain/Pods-MVVMAgain-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MVVMAgain/Pods-MVVMAgain-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MVVMAgain/Pods-MVVMAgain-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		24C10C9A383C61A8912B4223 /* [CP] Check Pods Manifest.lock */ = {
@@ -367,7 +380,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				498048B522B39E18003E88BB /* ViewController.swift in Sources */,
+				498048B522B39E18003E88BB /* UserListViewController.swift in Sources */,
 				498048E322B3B35A003E88BB /* UserViewModel.swift in Sources */,
 				498048B322B39E18003E88BB /* AppDelegate.swift in Sources */,
 				498048DC22B3A44A003E88BB /* UserTableViewCell.swift in Sources */,
@@ -536,12 +549,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = MVVMAgain/Info.plist;
+				INFOPLIST_FILE = MVVMAgain/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = vuong.handsome.MVVMAgain;
+				PRODUCT_BUNDLE_IDENTIFIER = vuong.MVVMAgain;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -554,12 +567,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = MVVMAgain/Info.plist;
+				INFOPLIST_FILE = MVVMAgain/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = vuong.handsome.MVVMAgain;
+				PRODUCT_BUNDLE_IDENTIFIER = vuong.MVVMAgain;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
